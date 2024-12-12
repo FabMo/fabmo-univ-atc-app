@@ -1,0 +1,304 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Title Container */
+.title-container {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    background-color: #f9fafc;
+    border-bottom: 1px solid #e0e0e0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10; /* Ensure it stays on top */
+}
+
+/* Settings Button (Gear Icon) */
+.settings-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Button Container */
+.button-container {
+    text-align: center;
+    padding: 15px;
+    margin-bottom: 5px;
+    background-color: #fff;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.action-button {
+    margin: 5px;
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #313366;
+    color: #fff;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.action-button:hover {
+    background-color: #4a90e2;
+}
+
+/* Main Container and Columns */
+body {
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    padding-top: 100px; /* Space for fixed header */
+}
+
+/* Main Container and Columns */
+.container {
+    display: flex;
+    justify-content: space-between; /* Ensure equal spacing between columns */
+    max-width: 1200px; /* Increase width if needed */
+    width: 100%;
+    margin-top: 40px; /* Space below title container */
+    padding: 20px; /* Added padding for the entire container */
+    gap: 20px; /* Spacing between columns */
+}
+
+.column {
+    flex: 1;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    border: 1px solid #e0e0e0;
+    min-width: 300px; /* Ensure minimum width for smaller screens */
+}
+
+/* Headings */
+h1 {
+    font-size: 2em;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 1.2em;
+    color: #34495e;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 5px;
+}
+
+/* Tool Information */
+#current-tool {
+    font-size: 1em;
+    color: #16a085;
+    margin-top: 10px;
+}
+
+/* Tool Slots Styling */
+.tool-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.tool-slot-button {
+    padding: 8px 12px;
+    font-size: 1em;
+    color: #fff;
+    background-color:  #313366;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.tool-slot-button:hover {
+    background-color: #4a90e2;
+}
+
+.tool-select,
+.tool-size-input {
+    width: 100%;
+    padding: 8px;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.tool-select:focus,
+.tool-size-input:focus {
+    border-color: #3498db;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th,
+td {
+    border: 1px solid #e0e0e0;
+    padding: 10px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+th {
+    background-color: #ecf0f1;
+    color: #2c3e50;
+    font-weight: bold;
+}
+
+
+/* Hidden and Show Classes for Settings Pane */
+.hidden {
+    transform: translate(100%, -50%);
+}
+
+/* Optional: Fullscreen Overlay for Dimming Background */
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 9998;
+    display: none;
+}
+
+.backdrop.show {
+    display: block;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    #tool-slot {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+.fabmo-variables-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.variable-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.variable-item label {
+    font-size: 0.9em;
+    margin-bottom: 5px;
+    color: #2c3e50;
+}
+
+.variable-input {
+    padding: 8px;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.settings-pane.show {
+    display: block;
+}
+.hidden {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 9998;
+    display: none;
+}
+
+.backdrop.show {
+    display: block;
+}
+
+/* FabMo Variables Grid Styling */
+.fabmo-variables-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.settings-pane {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    width: 80vw;
+    height: 80vh;
+    background-color: #fff;
+    opacity: 0;
+    z-index: 9999;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+}
+
+.settings-pane.show {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.settings-pane.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    z-index: 9998;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.backdrop.show {
+    opacity: 1;
+    pointer-events: auto;
+}

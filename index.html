@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATC Tool Changer</title>
+    <link rel="stylesheet" href="css/updated_styles.css">
+    <script type="text/javascript" src="/fabmo/dashboard/static/js/libs/fabmo.js"></script> 
+    <script type="module" src="js/ATC_Frontend.js"></script>
+</head>
+<body>
+    <div class="title-container">
+        <h1>Automatic Tool Changer (ATC)</h1>
+        <p id="current-tool-display" class="current-tool-display">No tool is currently loaded.</p>
+        <div class="button-container">
+            <button id="C2-Zero" class="action-button">C2 (Z-Zero)</button>
+            <button id="C3-Home" class="action-button">C3 (Home)</button>
+            <button id="C72-Measure-all-Tools" class="action-button">Measure all Tools</button>
+            <button id="C73-Get-plate-offset" class="action-button">C73 (Get plate offset)</button>
+            <button id="remove-tool" class="action-button">Remove Tool</button>
+            <button id="settings-button" class="settings-button">⚙️</button>
+        </div>        
+    </div>
+<!-- Pop-Out Settings Pane -->
+<!-- Pop-Out Settings Pane -->
+<div id="settings-pane" class="settings-pane hidden">
+    <!-- Static Header -->
+    <div class="settings-pane-header">
+        <h2>ATC - Settings</h2>
+        <button class="close-button">X</button> 
+    </div>
+
+    <!-- Scrollable Content -->
+    <div class="settings-pane-content">
+        <label for="default-tool-size">Calibrate ATC:</label>
+        <button id="C74-Calibrate" class="action-button">C74 Calibrate ATC</button>
+        <h3>FabMo System Variables</h3>
+        <div class="fabmo-variables-grid">
+            <!-- Input Fields for Each Exposed Variable -->
+            <div class="variable-item">
+                <label for="ZZero_Sensor">$ZZero_Sensor</label>
+                <input type="number" id="ZZero_Sensor" class="variable-input" value="1">
+            </div>
+            <div class="variable-item">
+                <label for="X_Prox">$X_Prox</label>
+                <input type="number" id="X_Prox" class="variable-input" value="3">
+            </div>
+            <div class="variable-item">
+                <label for="Y_Prox">$Y_Prox</label>
+                <input type="number" id="Y_Prox" class="variable-input" value="3">
+            </div>
+            <div class="variable-item">
+                <label for="Z_Prox">$Z_Prox</label>
+                <input type="number" id="Z_Prox" class="variable-input" value="3">
+            </div>
+            <div class="variable-item">
+                <label for="ToolBar_Sensor">$ToolBar_Sensor</label>
+                <input type="number" id="ToolBar_Sensor" class="variable-input" value="6">
+            </div>
+            <div class="variable-item">
+                <label for="Tool_Sensor">$Tool_Sensor</label>
+                <input type="number" id="Tool_Sensor" class="variable-input" value="7">
+            </div>
+            <div class="variable-item">
+                <label for="DrawBar_Sensor">$DrawBar_Sensor</label>
+                <input type="number" id="DrawBar_Sensor" class="variable-input" value="8">
+            </div>
+            <!-- Status Variables -->
+            <div class="variable-item">
+                <label for="ZZero_Status">$ZZero_Status</label>
+                <input type="number" id="ZZero_Status" class="variable-input" value="51">
+            </div>
+            <div class="variable-item">
+                <label for="X_Prox_Status">$X_Prox_Status</label>
+                <input type="number" id="X_Prox_Status" class="variable-input" value="53">
+            </div>
+            <div class="variable-item">
+                <label for="Y_Prox_Status">$Y_Prox_Status</label>
+                <input type="number" id="Y_Prox_Status" class="variable-input" value="53">
+            </div>
+            <div class="variable-item">
+                <label for="Z_Prox_Status">$Z_Prox_Status</label>
+                <input type="number" id="Z_Prox_Status" class="variable-input" value="53">
+            </div>
+            <div class="variable-item">
+                <label for="ToolBar_Status">$ToolBar_Status</label>
+                <input type="number" id="ToolBar_Status" class="variable-input" value="56">
+            </div>
+            <div class="variable-item">
+                <label for="Tool_Sensor_Status">$Tool_Sensor_Status</label>
+                <input type="number" id="Tool_Sensor_Status" class="variable-input" value="57">
+            </div>
+            <div class="variable-item">
+                <label for="Drawbar_Sensor_Status">$Drawbar_Sensor_Status</label>
+                <input type="number" id="Drawbar_Sensor_Status" class="variable-input" value="58">
+            </div>
+            <!-- State Variables -->
+            <div class="variable-item">
+                <label for="X_State">$X_State</label>
+                <input type="number" id="X_State" class="variable-input" value="1">
+            </div>
+            <div class="variable-item">
+                <label for="Y_State">$Y_State</label>
+                <input type="number" id="Y_State" class="variable-input" value="1">
+            </div>
+            <div class="variable-item">
+                <label for="Z_State">$Z_State</label>
+                <input type="number" id="Z_State" class="variable-input" value="1">
+            </div>
+            <!-- Output Variable -->
+            <div class="variable-item">
+                <label for="DrawBar">$DrawBar</label>
+                <input type="number" id="DrawBar" class="variable-input" value="8">
+            </div>
+        </div>
+    </div>
+    <div class="settings-pane-footer">
+        <button id="save-settings-button" class="action-button">Save Settings</button>
+    </div>
+</div>
+</div>
+    <div class="container">
+        <div class="column" id="tool-info">
+            <h2>Tool Information</h2>
+            <p id="current-tool">No tool is currently loaded.</p>
+        </div>
+        <div class="column" id="tool-list">
+            <h2>Tool Slots</h2>
+            <div id="tool-list-output"></div>
+        </div>
+        <div class="column" id="off-bar-tools">
+            <h2>Off Bar Tools</h2>
+            <div id="off-bar-tools-output"></div>
+        </div>
+    </div>
+    </div>
+</body>
+<div class="backdrop hidden"></div>
+</html>
+
+

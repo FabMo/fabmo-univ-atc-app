@@ -1,0 +1,136 @@
+{
+  "movexy_speed": 3,
+  "movez_speed": 1,
+  "movea_speed": 1,
+  "moveb_speed": 10,
+  "movec_speed": 10,
+  "jogxy_speed": 5,
+  "jogy_speed": 5,
+  "jogz_speed": 3,
+  "joga_speed": 3,
+  "jogb_speed": 100,
+  "jogc_speed": 100,
+  "xy_maxjerk": 50,
+  "y_maxjerk": 50,
+  "z_maxjerk": 50,
+  "a_maxjerk": 50,
+  "b_maxjerk": 1000,
+  "c_maxjerk": 1000,
+  "cutterDia": 0.25,
+  "pocketOverlap": 50,
+  "safeZpullUp": 0.25,
+  "safeApullUp": 0.25,
+  "variables": {},
+  "transforms": {
+    "rotate": {
+      "apply": false,
+      "angle": 0,
+      "x": 0,
+      "y": 0
+    },
+    "shearx": {
+      "apply": false,
+      "angle": 0
+    },
+    "sheary": {
+      "apply": false,
+      "angle": 0
+    },
+    "scale": {
+      "apply": false,
+      "scalex": 1,
+      "scaley": 1,
+      "scalez": 1,
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "move": {
+      "apply": false,
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "interpolate": {
+      "apply": false
+    },
+    "level": {
+      "apply": false,
+      "ptDataFile": "C:/SbParts/PtData.json"
+    }
+  },
+  "cRes": 0.01,
+  "GblPropX": 1,
+  "GblPropY": 1,
+  "tempVariables": {},
+  "ATC": {
+            "TYPE": 7,
+            "STATUS": "OK",
+            "TOOLBAR": "NOT ATTACHED",
+            "TOOLIN": "7",
+            "DROPPED": 0,
+            "PLATEOFFSET": -0.9710000000000001,
+            "TOOL_LENGTH": -5,
+            "NUMCLIPS": "7",
+            "MAXDEPTH": -0.02
+        },
+        "TOOLS": {
+            "0": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0,
+                "H": 0,
+                "TYPE": ""
+            },
+            "1": {
+                "X": 33.238499999999995,
+                "Y": 3.05375,
+                "Z": -4.15575,
+                "H": -5,
+                "TYPE": ""
+
+            },
+            "2": {
+                "X": 33.238499999999995,
+                "Y": 6.05375,
+                "Z": -4.15575,
+                "H": -5,
+                "TYPE": ""
+            },
+            "3": {
+                "X": 33.238499999999995,
+                "Y": 9.05375,
+                "Z": -4.15575,
+                "H": -5,
+                "TYPE": ""
+            },
+            "4": {
+                "X": 33.238499999999995,
+                "Y": 12.05375,
+                "Z": -4.15575,
+                "H": -5,
+                "TYPE": ""
+            },
+            "5": {
+                "X": 33.238499999999995,
+                "Y": 15.05375,
+                "Z": -4.15575,
+                "H": -5,
+                "TYPE": ""
+            },
+            "6": {
+                "X": 33.238499999999995,
+                "Y": 18.05375,
+                "Z": -4.15575,
+                "H": -5,
+                "TYPE": ""
+            },
+            "7": {
+                "X": 33.238499999999995,
+                "Y": 21.05375,
+                "Z": -4.15575,
+                "H": -5,
+                "TYPE": ""
+            }
+        }
+}
