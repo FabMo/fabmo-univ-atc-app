@@ -9,6 +9,10 @@
     "author": "Joshua Ayers",
     "website": "http://www.shopbottools.com",
     "description": "Universal ATC Manager for FabMo",
+    "devDependencies": {
+        "grunt": "^0.4.5",
+        "grunt-zip": "^0.17.1"
+    },
     "files": [
         "bit_information.json",
         "icon.png",
@@ -24,6 +28,6 @@
         "images\\hsd_iso30_toolholder_specs.jpg",
         "js\\atc_fork.js",
         "js\\ATC_Frontend.js",
-        "js\\lib\\fabmo.js",
+        "js\\lib\\fabmo.js"
     ]
 }
